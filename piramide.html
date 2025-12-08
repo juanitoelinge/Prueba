@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pirámide de las Adicciones</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Serif; /* Fuente clásica */
+            color: #E0E0E0; /* Texto principal claro */
+            background-color: #121212; /* Fondo oscuro tipo “modo noche” */
+        }
+
+        .piramide-container {
+            padding: 20px; /* Menos espaciado general */
+        }
+
+        .titulo {
+            color: #E0E0E0; /* Color del título */
+            text-align: center; /* Centrado */
+            font-size: 2.2rem; /* Tamaño más pequeño del título */
+            margin-bottom: 20px; /* Espacio debajo */
+        }
+
+        .piramide {
+            display: flex;
+            flex-direction: column; /* Niveles uno debajo del otro */
+            align-items: center;
+            gap: 20px; /* Menos espacio entre niveles */
+            text-align: center;
+            width: 100%;
+        }
+
+        .nivel {
+            display: flex;
+            justify-content: center; /* Centra las cajas internas */
+            gap: 15px; /* Menos espacio entre cajas */
+            padding: 20px; /* Menos espaciado interno */
+            background: #2B2B2B; /* Fondo oscuro del nivel */
+            border: 3px solid #444444; /* Borde gris */
+            border-radius: 15px; /* Bordes redondeados */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación al pasar el mouse */
+        }
+
+        .nivel:hover {
+            transform: scale(1.03); /* Efecto de agrandarse un poco */
+            box-shadow: 0 12px 24px rgba(136,136,136,0.3); /* Sombra ligera */
+            border-color: #888888; /* Borde más claro al hover */
+        }
+
+        .violencia {
+            background-color: #2B2B2B; /* Fondo interno */
+            color: #E0E0E0; /* Texto claro */
+            padding: 10px 20px; /* Menos espaciado interno */
+            border-radius: 10px; /* Bordes redondeados */
+            transition: background-color 0.5s, transform 0.5s; /* Suavidad al pasar el mouse */
+            border: 2px solid #444444; /* Borde gris oscuro */
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15); /* Sombrilla sutil */
+            font-size: 20px; /* Texto más pequeño */
+            font-weight: bold; /* Texto en negrita */
+        }
+
+        .violencia:hover {
+            background-color: #444444; /* Cambio de fondo al pasar el mouse */
+            border-color: #888888; /* Borde más claro */
+            transform: translateY(-5px); /* Se eleva un poco */
+        }
+
+        /* Anchos diferentes para dar forma de pirámide */
+        .nivel:nth-child(1) { width: 40%; }
+        .nivel:nth-child(2) { width: 55%; }
+        .nivel:nth-child(3) { width: 70%; }
+        .nivel:nth-child(4) { width: 85%; }
+        .nivel:nth-child(5) { width: 95%; }
+
+        /* Ajuste para pantallas pequeñas (celulares) */
+        @media (max-width: 600px) {
+            .nivel {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        h1 {
+            text-shadow: 3px 3px 4px #888888; /* Sombra del título */
+        }
+    </style>
+</head>
+<body>
+    <div class="piramide-container">
+        <!-- Título principal -->
+        <h1 class="titulo">Consecuencias de las adicciones</h1><br>
+
+        <!-- Contenedor de todos los niveles de la pirámide -->
+        <div class="piramide">
+
+            <!-- Nivel superior (más grave) -->
+            <div class="nivel">
+                <div class="violencia">Consecuencias graves y pérdida de control</div>
+            </div>
+
+            <!-- Segundo nivel -->
+            <div class="nivel">
+                <div class="violencia">Dependencia a drogas</div>
+                <div class="violencia">Alcoholismo avanzado</div>
+            </div>
+
+            <!-- Tercer nivel -->
+            <div class="nivel">
+                <div class="violencia">Necesidad constante de internet</div>
+                <div class="violencia">Ansiedad si no se usa el celular</div>
+            </div>
+
+            <!-- Cuarto nivel -->
+            <div class="nivel">
+                <div class="violencia">Fumar con frecuencia</div>
+                <div class="violencia">Beber cada fin de semana</div>
+            </div>
+
+            <!-- Nivel base (más común o leve) -->
+            <div class="nivel">
+                <div class="violencia">Uso moderado de redes sociales</div>
+                <div class="violencia">Consumo ocasional de alcohol</div>
+                <div class="violencia">Videojuegos sin exceso</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
